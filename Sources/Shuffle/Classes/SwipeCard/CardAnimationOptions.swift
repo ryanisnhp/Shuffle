@@ -26,69 +26,69 @@ import UIKit
 
 /// The animation options provided to the internal card animator.
 public struct CardAnimationOptions {
-
-  /// The maximum rotation angle of the card, measured in radians.
-  ///
-  /// Defined as a value in the range `[-CGFloat.pi/2, CGFloat.pi/2]`. Defaults to `CGFloat.pi/10`.
-  public var maximumRotationAngle: CGFloat = .pi / 10 {
-    didSet {
-      maximumRotationAngle = max(-.pi / 2, min(maximumRotationAngle, .pi / 2))
+    
+    /// The maximum rotation angle of the card, measured in radians.
+    ///
+    /// Defined as a value in the range `[-CGFloat.pi/2, CGFloat.pi/2]`. Defaults to `CGFloat.pi/10`.
+    public var maximumRotationAngle: CGFloat = .pi / 10 {
+        didSet {
+            maximumRotationAngle = max(-.pi / 2, min(maximumRotationAngle, .pi / 2))
+        }
     }
-  }
-
-  /// The duration of the fade animation applied to the overlays after the reverse swipe translation.
-  /// Measured relative to the total reverse swipe duration.
-  ///
-  /// Defined as a value in the range `[0, 1]`. Defaults to `0.15`.
-  public var relativeReverseSwipeOverlayFadeDuration: Double = 0.15 {
-    didSet {
-      relativeReverseSwipeOverlayFadeDuration = max(0, min(relativeReverseSwipeOverlayFadeDuration, 1))
+    
+    /// The duration of the fade animation applied to the overlays after the reverse swipe translation.
+    /// Measured relative to the total reverse swipe duration.
+    ///
+    /// Defined as a value in the range `[0, 1]`. Defaults to `0.15`.
+    public var relativeReverseSwipeOverlayFadeDuration: Double = 0.15 {
+        didSet {
+            relativeReverseSwipeOverlayFadeDuration = max(0, min(relativeReverseSwipeOverlayFadeDuration, 1))
+        }
     }
-  }
-
-  /// The duration of the fade animation applied to the overlays before the swipe translation.
-  /// Measured relative to the total swipe duration.
-  ///
-  /// Defined as a value in the range `[0, 1]`. Defaults to `0.15`.
-  public var relativeSwipeOverlayFadeDuration: Double = 0.15 {
-    didSet {
-      relativeSwipeOverlayFadeDuration = max(0, min(relativeSwipeOverlayFadeDuration, 1))
+    
+    /// The duration of the fade animation applied to the overlays before the swipe translation.
+    /// Measured relative to the total swipe duration.
+    ///
+    /// Defined as a value in the range `[0, 1]`. Defaults to `0.15`.
+    public var relativeSwipeOverlayFadeDuration: Double = 0.15 {
+        didSet {
+            relativeSwipeOverlayFadeDuration = max(0, min(relativeSwipeOverlayFadeDuration, 1))
+        }
     }
-  }
-
-  /// The damping coefficient of the spring-like animation applied when a swipe is canceled.
-  ///
-  /// Defined as a value in the range `[0, 1]`. Defaults to `0.5`
-  public var resetSpringDamping: CGFloat = 0.5 {
-    didSet {
-      resetSpringDamping = max(0, min(resetSpringDamping, 1))
+    
+    /// The damping coefficient of the spring-like animation applied when a swipe is canceled.
+    ///
+    /// Defined as a value in the range `[0, 1]`. Defaults to `0.5`
+    public var resetSpringDamping: CGFloat = 0.5 {
+        didSet {
+            resetSpringDamping = max(0, min(resetSpringDamping, 1))
+        }
     }
-  }
-
-  /// The duration of the spring-like animation applied when a swipe is canceled, measured in seconds.
-  ///
-  /// This value must be greater than zero. Defaults to `0.6`.
-  public var totalResetDuration: TimeInterval = 0.6 {
-    didSet {
-      totalResetDuration = max(.leastNormalMagnitude, totalResetDuration)
+    
+    /// The duration of the spring-like animation applied when a swipe is canceled, measured in seconds.
+    ///
+    /// This value must be greater than zero. Defaults to `0.6`.
+    public var totalResetDuration: TimeInterval = 0.6 {
+        didSet {
+            totalResetDuration = max(.leastNormalMagnitude, totalResetDuration)
+        }
     }
-  }
-
-  /// The total duration of the reverse swipe animation, measured in seconds.
-  ///
-  /// This value must be greater than zero. Defaults to `0.25`.
-  public var totalReverseSwipeDuration: TimeInterval = 0.25 {
-    didSet {
-      totalReverseSwipeDuration = max(.leastNormalMagnitude, totalReverseSwipeDuration)
+    
+    /// The total duration of the reverse swipe animation, measured in seconds.
+    ///
+    /// This value must be greater than zero. Defaults to `0.25`.
+    public var totalReverseSwipeDuration: TimeInterval = 0.25 {
+        didSet {
+            totalReverseSwipeDuration = max(.leastNormalMagnitude, totalReverseSwipeDuration)
+        }
     }
-  }
-
-  /// The total duration of the swipe animation, measured in seconds.
-  ///
-  /// This value must be greater than zero. Defaults to `0.7`.
-  public var totalSwipeDuration: TimeInterval = 0.7 {
-    didSet {
-      totalSwipeDuration = max(.leastNormalMagnitude, totalSwipeDuration)
+    
+    /// The total duration of the swipe animation, measured in seconds.
+    ///
+    /// This value must be greater than zero. Defaults to `0.7`.
+    public var totalSwipeDuration: TimeInterval = 0.7 {
+        didSet {
+            totalSwipeDuration = max(.leastNormalMagnitude, totalSwipeDuration)
+        }
     }
-  }
 }
